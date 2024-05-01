@@ -75,10 +75,10 @@ struct ContentView: View {
             Text("Your score is \(userScore) / \(questionsAnswered)")
         }
         .alert("End of Game", isPresented: $endGame) {
-                Button("Play Again", action: restartGame)
-                Button("Quit") {
-                    quitGame()
-            }
+            Button("Play Again", action: restartGame)
+            Button("Quit", action: quitGame)
+        } message: {
+            Text("Your final score is \(userScore) / \(questionsAnswered)")
         }
     }
 
